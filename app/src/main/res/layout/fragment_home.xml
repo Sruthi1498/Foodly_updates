@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.HomeFragment">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:scrollbars="none">
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/chipGroup"
+            app:singleSelection="true"
+            app:checkedChip="@+id/byRating"
+            app:selectionRequired="true"
+            >
+            <com.google.android.material.chip.Chip
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:background="@color/grey"
+                android:text="Rating"
+                android:id="@+id/byRating"
+                android:textSize="13sp" />
+            <com.google.android.material.chip.Chip
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+
+                android:layout_marginLeft="10dp"
+                android:background="@color/grey"
+                android:text="Name (a-z)"
+                android:fontFamily="@font/poppins_light"
+                android:id="@+id/byName"
+                android:textSize="13sp" />
+            <com.google.android.material.chip.Chip
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@color/grey"
+                android:text="Name (z-a)"
+                android:padding="10dp"
+
+                android:fontFamily="@font/poppins_light"
+                android:id="@+id/byNameDesc"
+                android:textSize="13sp" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@color/grey"
+                android:padding="10dp"
+
+                android:text="Price (High-Low)"
+                android:fontFamily="@font/poppins_light"
+                android:id="@+id/byPrice"
+                android:textSize="13sp" />
+            <com.google.android.material.chip.Chip
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@color/grey"
+                android:padding="10dp"
+
+                android:text="Price (Low-High)"
+                android:fontFamily="@font/poppins_light"
+                android:id="@+id/byPriceDesc"
+                android:textSize="13sp" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/main_frg_appbar"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white"
+        app:cornerRadius="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_search"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:inputType="text"
+            android:id="@+id/main_search_bar"
+            android:imeOptions="actionSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:hint="Search Restaurants"
+            android:layout_weight="8"
+            android:textAlignment="center"
+            android:layout_marginLeft="12dp"
+            android:maxLength="30"
+            />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.denzcoskun.imageslider.ImageSlider
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:iss_auto_cycle="true"
+            app:iss_period="1000"
+            app:iss_delay="0"
+            android:layout_marginTop="110dp"
+            app:iss_corner_radius="1"
+            app:iss_title_background="@color/transaprency"                    android:id="@+id/imageSlider"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:padding="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/progressHomeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ProgressBar
+            android:theme="@style/CircularProgress"
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
